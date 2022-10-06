@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import autoBindReact from "auto-bind/react";
+import PropTypes from "prop-types";
 import NoteList from "../components/NoteList";
 import SearchBar from "../components/SearchBar";
 import { getArchivedNotes } from "../utils/local-data";
@@ -46,5 +47,10 @@ class ArchivePage extends Component {
     );
   }
 }
+
+ArchivePage.propTypes = {
+  keyword: PropTypes.string,
+  onSearchParams: PropTypes.func.isRequired,
+};
 
 export default ArchivePageWrapper;

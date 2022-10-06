@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import autoBindReact from "auto-bind/react";
+import PropTypes from "prop-types";
 import NoteList from "../components/NoteList";
 import SearchBar from "../components/SearchBar";
 import AddButton from "../components/AddButton";
@@ -48,5 +49,10 @@ class HomePage extends Component {
     );
   }
 }
+
+HomePage.propTypes = {
+  keyword: PropTypes.string,
+  onSearchParams: PropTypes.func.isRequired,
+};
 
 export default HomePageWrapper;

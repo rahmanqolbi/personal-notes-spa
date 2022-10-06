@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import autoBindReact from "auto-bind/react";
+import PropTypes from "prop-types";
 import { addNote } from "../utils/local-data";
 import { useNavigate } from "react-router-dom";
 import SaveButton from "../components/SaveButton";
 
 function AddPageWrapper() {
-  return <AddPage navigate={useNavigate()} />;
+  const navigate = useNavigate();
+  return <AddPage navigate={navigate} />;
 }
 
 class AddPage extends Component {
@@ -53,5 +55,9 @@ class AddPage extends Component {
     );
   }
 }
+
+AddPage.propTypes = {
+  navigate: PropTypes.func.isRequired,
+};
 
 export default AddPageWrapper;

@@ -1,9 +1,10 @@
 import React from "react";
 import { archiveNote, deleteNote, getNote, unarchiveNote } from "../utils/local-data";
 import { useNavigate, useParams } from "react-router-dom";
-import { showFormattedDate } from "../utils/index.js";
 import autoBindReact from "auto-bind/react";
 import parser from "html-react-parser";
+import PropTypes from "prop-types";
+import { showFormattedDate } from "../utils/index.js";
 import ArchiveButton from "../components/ArchiveButton";
 import DeleteButton from "../components/DeleteButton";
 import ActiveButton from "../components/ActiveButton";
@@ -51,5 +52,10 @@ class DetailPage extends React.Component {
     }
   }
 }
+
+DetailPage.propTypes = {
+  id: PropTypes.string.isRequired,
+  navigate: PropTypes.func.isRequired,
+};
 
 export default DetailPageWrapper;
